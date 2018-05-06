@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="error" name="RoutingTest"
+	packages="org.apache.logging.log4j.test">
+	<Properties>
+		<Property name="filename">./logs/macneto_call.log</Property>
+	</Properties>
+	<ThresholdFilter level="info" />
+
+	<Appenders>
+		<Console name="STDOUT">
+			<PatternLayout pattern="%d{dd.MM.yy HH:mm:ss} %p %C{1.} [%t] %m%n" />
+		</Console>
+		<Routing name="Routing">
+			<Routes pattern="$${sd:type}">
+				<Route>
+					<RollingFile name="Rolling-ncs" fileName="./logs/macneto_call.log"
+						immediateFlush="true" filePattern="./logs/macneto_call.%i.log.gz">
+						<PatternLayout>
+							<pattern>%d{dd.MM.yy HH:mm:ss} %p %C{1.} [%t] %m%n</pattern>
+						</PatternLayout>
+						<SizeBasedTriggeringPolicy size="500 MB" />
+					</RollingFile>
+				</Route>
+				<Route ref="STDOUT" key="Audit" />
+			</Routes>
+		</Routing>
+	</Appenders>
+
+	<Loggers>
+		<Root level="info">
+			<AppenderRef ref="STDOUT" level="INFO" />
+			<AppenderRef ref="Routing" level="INFO" />
+		</Root>
+	</Loggers>
+
+</Configuration>
