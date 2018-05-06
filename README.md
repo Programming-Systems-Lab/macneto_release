@@ -41,4 +41,20 @@ This step first compute PCA from the original executables, use it label the obfu
 `python macneto_search.py -o ORIGINAL/db/macneto.db -b OBFUSCATED/db/macneto.db -m 7`
 
 `-m` specifies the experiment (fold) number (m + 1). 
-In our paper, we conduct k-fold analysis, where `k = 8`
+In our paper, we conduct k-fold analysis, where `k = 8`.
+
+License
+-------
+This software is released under the MIT license.
+
+Copyright (c) 2018, by The Trustees of Columbia University in the City of New York.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Acknowledgements
+--------
+The authors of this software are [Fang-Hsiang (Mike) Su](mailto:mikefhsu@cs.columbia.edu), [Jonathan Bell](mailto:bellj@gmu.edu), [Gail Kaiser](mailto:kaiser@cs.columbia.edu) and [Baishakhi Ray](mailto:rayb@cs.columbia.edu). This work is funded in part by NSF CNS-1563555.
