@@ -11,8 +11,7 @@ Thus, we need to program-analyze both versions of binary.
 From step 1 to step 6, you will need to run them on both of your original apk and obfuscated apk (or jars).
 
 To facilitate the analysis, you can create a directory for analyzing your original binaries and create another directory for analyzing your obfuscated binaries.
-
-For learning the mapping between an executable and its obfuscated counterpart, we use [sklearn](http://scikit-learn.org/stable/), [tensorflow](https://www.tensorflow.org/) and [keras][https://keras.io/].
+For learning the mapping between an executable and its obfuscated counterpart, we use [sklearn](http://scikit-learn.org/stable/), [tensorflow](https://www.tensorflow.org/) and [keras](https://keras.io/).
 For installing these frameworks, please check out the details on their websites.
 
 ## Steps
