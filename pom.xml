@@ -23,6 +23,6 @@
   	</repositories>
   	
   	<modules>
-  		<module>macneto-inst-mining</module>
+  		<module>macneto-inst-analysis</module>
     </modules>
 </project>

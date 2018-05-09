@@ -16,12 +16,21 @@ For installing these frameworks, please check out the details on their websites.
 
 ## Steps
 
+### Step 0: Compilation </br>
+Our program analyzer is java based.
+For compiling our program analyzer, you will need to install [Maven](https://maven.apache.org/install.html).
+Simply use the following command for compliation:
+`mvn clean package`
+
 ### Step 1: Create database </br>
 `java -cp macneto-inst-analysis-0.0.1-SNAPSHOT.jar edu.columbia.cs.psl.macneto.db.DocManager`
 
 This command will create a database `db/macneto.db`. You will have to create both databases for your original binaries and your obfuscated binaries. This means that you will have <b>n + 1</b> databases, where n is the number of your obfuscators.
 
 ### Step 2: Generate call graphs </br>
+For computing the call graph for each apk, we leverage [FlowDroid](https://github.com/secure-software-engineering/FlowDroid).
+The set-up of FlowDroid can be found on their github repo.
+
 `python macneto_container_v2/graph_gen.py -a YOUR_APKBASE -g callgraphs -e macneto_container_v2/macneto-inst-analysis-0.0.1-SNAPSHOT.jar -f android/platforms -t 16 -ext jar`
 
 For details of these options, please refer to `graph_gen.py`. Again, this command needs to run on both original apks and obfuscated apks/jars. `-a` can specify the directory of your apks. `-g` can specify where you want to store your callgraphs. We usually keep it as `./callgraphs`. `-t` can specify the thread number. `-ext` can specify which types of binary you want to analyze.
